@@ -1,0 +1,23 @@
+{
+  "name": "rem-21-3-frontend",
+  "version": "1.0.0",
+  "description": "Frontend example",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slautner/rem-21-3-frontend.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slautner/rem-21-3-frontend/issues"
+  },
+  "homepage": "https://github.com/slautner/rem-21-3-frontend#readme",
+  "devDependencies": {
+    "vite": "^2.4.4"
+  }
+}
