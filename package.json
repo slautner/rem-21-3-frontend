@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "vite"
+    "start": "vite",
+    "prettier": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/slautner/rem-21-3-frontend#readme",
   "devDependencies": {
+    "prettier": "^2.3.2",
     "vite": "^2.4.4"
   }
 }
