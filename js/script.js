@@ -60,9 +60,7 @@ function renameImmutableMap(students, name, newName) {
     // map creates a new array itself copy of students is obsolete
     return students.map(student => {
         if (student.name === name) {
-            const newStudent = {...student}
-            newStudent.name = newName
-            return newStudent
+            return {...student, name: newName}
         }
         return student;
     });
