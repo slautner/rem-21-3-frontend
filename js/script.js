@@ -42,7 +42,7 @@ const studentMarie = {
 const students = [studentKlaus, studentMarie]
 console.log(`Origin array: ${JSON.stringify(students)}`)
 
-function renameImmutable(students, name, newName) {
+function renameImmutableIndex(students, name, newName) {
     const studentsCopy = [...students]
     const studentFoundIndex = studentsCopy.findIndex(student => student.name === name)
     if (studentFoundIndex >= 0) {
@@ -53,7 +53,22 @@ function renameImmutable(students, name, newName) {
     return studentsCopy;
 }
 
-console.log(`Immutable changed: ${JSON.stringify(renameImmutable(students, "Klaus", "Bernd"))}`)
+console.log(`ImmutableIndex changed: ${JSON.stringify(renameImmutableIndex(students, "Klaus", "Bernd"))}`)
+console.log(`Origin array: ${JSON.stringify(students)}`)
+
+function renameImmutableMap(students, name, newName) {
+    // map creates a new array itself copy of students is obsolete
+    return students.map(student => {
+        if (student.name === name) {
+            const newStudent = {...student}
+            newStudent.name = newName
+            return newStudent
+        }
+        return student;
+    });
+}
+
+console.log(`ImmutableMap changed: ${JSON.stringify(renameImmutableMap(students, "Klaus", "Bernd"))}`)
 console.log(`Origin array: ${JSON.stringify(students)}`)
 
 function renameMutable(students, name, newName) {
