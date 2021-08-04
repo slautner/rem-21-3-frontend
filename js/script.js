@@ -1,4 +1,5 @@
 import {add, arrowAddFull, arrowAddShort} from "./math";
+import {renameImmutableIndex, renameImmutableMap, renameMutable} from "./students";
 
 const functionAdd = add(3, 2);
 console.log(`Functional: ${functionAdd}`);
@@ -38,44 +39,15 @@ const studentMarie = {
     id: "2",
     name: "Marie"
 }
-
 const students = [studentKlaus, studentMarie]
-console.log(`Origin array: ${JSON.stringify(students)}`)
 
-function renameImmutableIndex(students, name, newName) {
-    const studentsCopy = [...students]
-    const studentFoundIndex = studentsCopy.findIndex(student => student.name === name)
-    if (studentFoundIndex >= 0) {
-        const studentCopy = {...studentsCopy[studentFoundIndex]}
-        studentCopy.name = newName
-        studentsCopy[studentFoundIndex] = studentCopy;
-    }
-    return studentsCopy;
-}
+console.log(`Origin array: ${JSON.stringify(students)}`)
 
 console.log(`ImmutableIndex changed: ${JSON.stringify(renameImmutableIndex(students, "Klaus", "Bernd"))}`)
 console.log(`Origin array: ${JSON.stringify(students)}`)
 
-function renameImmutableMap(students, name, newName) {
-    // map creates a new array itself copy of students is obsolete
-    return students.map(student => {
-        if (student.name === name) {
-            return {...student, name: newName}
-        }
-        return student;
-    });
-}
-
 console.log(`ImmutableMap changed: ${JSON.stringify(renameImmutableMap(students, "Klaus", "Bernd"))}`)
 console.log(`Origin array: ${JSON.stringify(students)}`)
-
-function renameMutable(students, name, newName) {
-    const studentFound = students.find(student => student.name === name)
-    if (studentFound) {
-        studentFound.name = newName;
-    }
-    return students;
-}
 
 console.log(`Mutable changed: ${JSON.stringify(renameMutable(students, "Klaus", "Bernd"))}`)
 console.log(`Modified (origin) array: ${JSON.stringify(students)}`)
