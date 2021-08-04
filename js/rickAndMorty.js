@@ -20,7 +20,6 @@ export const getFilterAlive = characters => characters.filter(character => chara
 const isNonHumanAndAlive = character => character.status === 'Alive' && character.species !== 'Human';
 export const getFilterAliveNonHumans = characters => characters.filter(character => isNonHumanAndAlive(character))
 
-
 export const getMapAliveOrigin = characters => characters.map(character => (
         {name: character.name, origin: character.origin.name}
     )

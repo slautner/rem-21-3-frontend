@@ -1,13 +1,8 @@
+import rickAndMortyCharacters from "../json/rickAndMortyCharacters.json"
+import {fetchAllCharacters} from "./rickAndMortyService";
 import {add, arrowAddFull, arrowAddShort} from "./math";
 import {renameImmutableIndex, renameImmutableMap, renameMutable} from "./students";
-import {
-    filterAlive,
-    mapAliveOrigin,
-    getFilterAlive,
-    getMapAliveOrigin,
-    getFilterAliveNonHumans
-} from "./rickAndMorty"
-import rickAndMortyCharacters from "../json/rickAndMortyCharacters.json"
+import {filterAlive, getFilterAlive, getFilterAliveNonHumans, getMapAliveOrigin, mapAliveOrigin} from "./rickAndMorty"
 
 const functionAdd = add(3, 2);
 console.log(`Functional: ${functionAdd}`);
@@ -73,3 +68,10 @@ console.log(`RickAndMorty amount of alive filtered: ${JSON.stringify(aliveFilter
 console.log(`RickAndMorty alive non-humans filtered: ${JSON.stringify(getFilterAliveNonHumans(rickAndMortyCharacterResults))}`)
 
 console.log(`RickAndMorty mapped alive: ${JSON.stringify(getMapAliveOrigin(aliveFiltered))}`)
+
+// --
+
+fetchAllCharacters().then(
+    characters => console.log(
+        `RickAndMorty alive non-humans fetch: ${JSON.stringify(getFilterAliveNonHumans(characters))}`
+    ))
