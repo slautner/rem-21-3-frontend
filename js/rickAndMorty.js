@@ -11,3 +11,17 @@ export function mapAliveOrigin() {
         return {name: character.name, origin: character.origin.name}
     })
 }
+
+
+// -- same but as const functions
+
+export const getFilterAlive = characters => characters.filter(character => character.status === 'Alive')
+
+const isNonHumanAndAlive = character => character.status === 'Alive' && character.species !== 'Human';
+export const getFilterAliveNonHumans = characters => characters.filter(character => isNonHumanAndAlive(character))
+
+
+export const getMapAliveOrigin = characters => characters.map(character => (
+        {name: character.name, origin: character.origin.name}
+    )
+)
