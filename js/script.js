@@ -53,6 +53,8 @@ console.log(`Origin array: ${JSON.stringify(students)}`)
 console.log(`Mutable changed: ${JSON.stringify(renameMutable(students, "Klaus", "Bernd"))}`)
 console.log(`Modified (origin) array: ${JSON.stringify(students)}`)
 
+// --
+
 console.log(`RickAndMorty amount of filtered alive: ${JSON.stringify(filterAlive().length)}`)
 console.log(`RickAndMorty mapped alive: ${JSON.stringify(mapAliveOrigin())}`)
 

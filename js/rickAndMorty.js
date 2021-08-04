@@ -1,5 +1,5 @@
 // response from https://rickandmortyapi.com/api/character
-import rickAndMortyCharacters from "./rickAndMortyCharacters.json"
+import rickAndMortyCharacters from "../json/rickAndMortyCharacters.json"
 
 export function filterAlive() {
     const rickAndMortyCharacterResults = rickAndMortyCharacters.results;
